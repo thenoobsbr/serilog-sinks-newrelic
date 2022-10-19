@@ -1,0 +1,4 @@
+variables:
+  - group: serilog-sinks-newrelic
+  - group: sonar
+  - group: nuget

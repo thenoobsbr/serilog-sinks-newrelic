@@ -9,10 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheNoobs.Serilog.Sinks.NewR
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheNoobs.Serilog.Sinks.NewRelic.Extensions.DependencyInjection", "src\TheNoobs.Serilog.Sinks.NewRelic.Extensions.DependencyInjection\TheNoobs.Serilog.Sinks.NewRelic.Extensions.DependencyInjection.csproj", "{76CB4497-05B2-48FC-9E42-23CD34CF4178}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{D0D1959F-7F79-4816-A0AF-46D816E4570F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheNoobs.Serilog.Sinks.NewRelic.Extensions.DependencyInjection.Tests", "tests\TheNoobs.Serilog.Sinks.NewRelic.Extensions.DependencyInjection.Tests\TheNoobs.Serilog.Sinks.NewRelic.Extensions.DependencyInjection.Tests.csproj", "{01A4D378-F2FB-4AF9-B6E6-90CFF4DC9121}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,14 +26,9 @@ Global
 		{76CB4497-05B2-48FC-9E42-23CD34CF4178}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{76CB4497-05B2-48FC-9E42-23CD34CF4178}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{76CB4497-05B2-48FC-9E42-23CD34CF4178}.Release|Any CPU.Build.0 = Release|Any CPU
-		{01A4D378-F2FB-4AF9-B6E6-90CFF4DC9121}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{01A4D378-F2FB-4AF9-B6E6-90CFF4DC9121}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{01A4D378-F2FB-4AF9-B6E6-90CFF4DC9121}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{01A4D378-F2FB-4AF9-B6E6-90CFF4DC9121}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{FB2BFF8E-3F61-4926-B957-B10D210ECC3C} = {823D139F-87C5-46E8-9BCF-6B20C3255EBE}
 		{76CB4497-05B2-48FC-9E42-23CD34CF4178} = {823D139F-87C5-46E8-9BCF-6B20C3255EBE}
-		{01A4D378-F2FB-4AF9-B6E6-90CFF4DC9121} = {D0D1959F-7F79-4816-A0AF-46D816E4570F}
 	EndGlobalSection
 EndGlobal

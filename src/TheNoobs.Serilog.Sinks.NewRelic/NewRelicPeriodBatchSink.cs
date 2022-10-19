@@ -43,8 +43,11 @@ public class NewRelicPeriodBatchSink : IBatchedLogEventSink
         
         using var request = new HttpRequestMessage(HttpMethod.Post, _options.BaseUrl);
         request.Headers.Add("Api-Key", _options.LicenseKey);
+
+        const string JSON_TYPE = "application/json";
+        
         request.Content =
-            new StringContent(json, Encoding.UTF8, MediaTypeNames.Application.Json);
+            new StringContent(json, Encoding.UTF8, JSON_TYPE);
         var response = await _client.SendAsync(request);
         response.EnsureSuccessStatusCode();
     }

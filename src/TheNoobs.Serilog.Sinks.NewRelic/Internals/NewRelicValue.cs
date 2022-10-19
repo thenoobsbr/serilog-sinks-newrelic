@@ -1,6 +1,9 @@
 ﻿using System.Text.Json;
 using System.Text.Json.Serialization;
 using Serilog.Events;
+#if NETSTANDARD
+using TheNoobs.Serilog.Sinks.NewRelic.Extensions;
+#endif
 
 namespace TheNoobs.Serilog.Sinks.NewRelic.Internals;
 

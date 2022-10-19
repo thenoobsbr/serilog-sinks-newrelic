@@ -1,14 +1,40 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFrameworks>net6.0;netstandard2.0</TargetFrameworks>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <IsPackable>true</IsPackable>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <OutputType>library</OutputType>
+    <GenerateFullPaths>true</GenerateFullPaths>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);1591</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Authors>The Noobs</Authors>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <Description>Serilog sink for NewRelic.</Description>
+    <RepositoryType>GIT</RepositoryType>
+    <PackageId>TheNoobs.Serilog.Sinks.NewRelic</PackageId>
+    <PackageTags>serilog; sinks; newrelic; log;</PackageTags>
+    <UserSecretsId>{FC03C82B-CD10-45B5-896D-111C64D59950}</UserSecretsId>
+    <ProjectGuid>{4F58C09E-E8F7-44BF-8C2B-67D1A567C487}</ProjectGuid>
+    <Version>1.0.0</Version>
+    <PackageProjectUrl>https://github.com/thenoobsbr/serilog-sinks-newrelic</PackageProjectUrl>
+    <PackageIcon>icon.png</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Http" Version="6.0.0" />
     <PackageReference Include="Serilog.Sinks.PeriodicBatching" Version="3.1.0" />
+    <PackageReference Include="System.Text.Json" Version="6.0.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\images\icon.png" Pack="true" PackagePath="\" />
   </ItemGroup>
 
 </Project>

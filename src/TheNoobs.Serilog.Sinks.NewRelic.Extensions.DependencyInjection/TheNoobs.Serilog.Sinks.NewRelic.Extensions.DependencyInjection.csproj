@@ -1,9 +1,30 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFrameworks>net6.0;netstandard2.0</TargetFrameworks>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <IsPackable>true</IsPackable>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <OutputType>library</OutputType>
+    <GenerateFullPaths>true</GenerateFullPaths>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);1591</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Authors>The Noobs</Authors>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <Description>Extensions for newrelic serilog sink</Description>
+    <RepositoryType>GIT</RepositoryType>
+    <PackageId>TheNoobs.Serilog.Sinks.NewRelic.Extensions.DependencyInjection</PackageId>
+    <PackageTags>serilog; sinks; newrelic; log; extensions;</PackageTags>
+    <UserSecretsId>{1496595A-6B4B-4113-B052-8CE5558DA393}</UserSecretsId>
+    <ProjectGuid>{387DB438-2613-44D1-AEE3-04B96AAA830C}</ProjectGuid>
+    <Version>1.0.0</Version>
+    <PackageProjectUrl>https://github.com/thenoobsbr/serilog-sinks-newrelic</PackageProjectUrl>
+    <PackageIcon>icon.png</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -16,6 +37,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TheNoobs.Serilog.Sinks.NewRelic\TheNoobs.Serilog.Sinks.NewRelic.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\images\icon.png" Pack="true" PackagePath="\" />
   </ItemGroup>
 
 </Project>

@@ -9,10 +9,10 @@ namespace TheNoobs.Serilog.Sinks.NewRelic.Extensions;
 public static class LoggerSinkConfigurationExtensions
 {
     public static LoggerConfiguration NewRelic(this LoggerSinkConfiguration loggerSinkConfiguration,
-        Assembly assembly,
+        Assembly mainAssembly,
         Action<NewRelicOptions>? builder = null)
     {
-        var options = new NewRelicOptions(assembly);
+        var options = new NewRelicOptions(mainAssembly);
         builder?.Invoke(options);
 
         var sink = new NewRelicSink(options);
@@ -20,7 +20,7 @@ public static class LoggerSinkConfigurationExtensions
         return loggerSinkConfiguration.Sink(sink);
     }
 
-    class NewRelicSink : PeriodicBatchingSink
+    public class NewRelicSink : PeriodicBatchingSink
     {
         public NewRelicSink(NewRelicOptions options) : base(new NewRelicPeriodBatchSink(options), new PeriodicBatchingSinkOptions())
         {
