@@ -38,6 +38,7 @@ stages:
     parameters:
       pool: ${{ parameters.pool }}
       run_tests: false
+      run_sonar: false
   - template: templates/nuget/publish_package.yml@templates
     parameters:
       pool: ${{ parameters.pool }}
