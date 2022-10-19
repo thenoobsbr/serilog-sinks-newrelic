@@ -1,5 +1,4 @@
-﻿using System.Net.Mime;
-using System.Text;
+﻿using System.Text;
 using System.Text.Json;
 using Serilog.Events;
 using Serilog.Sinks.PeriodicBatching;
@@ -48,7 +47,7 @@ public class NewRelicPeriodBatchSink : IBatchedLogEventSink
         
         request.Content =
             new StringContent(json, Encoding.UTF8, JSON_TYPE);
-        var response = await _client.SendAsync(request);
+        var response = await _client.SendAsync(request).ConfigureAwait(false);
         response.EnsureSuccessStatusCode();
     }
 

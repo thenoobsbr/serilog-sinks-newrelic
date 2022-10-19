@@ -3,7 +3,7 @@ using Serilog.Events;
 
 namespace TheNoobs.Serilog.Sinks.NewRelic.Internals;
 
-internal class NewRelicLogs : IEnumerator<NewRelicLog>, IEnumerable<NewRelicLog>
+internal sealed class NewRelicLogs : IEnumerator<NewRelicLog>, IEnumerable<NewRelicLog>
 {
     private readonly SemaphoreSlim _semaphore = new(0, 1);
     private readonly LogEvent[] _events;
@@ -44,7 +44,7 @@ internal class NewRelicLogs : IEnumerator<NewRelicLog>, IEnumerable<NewRelicLog>
         _index = -1;
     }
 
-    public NewRelicLog Current { get; private set; } = null!;
+    public NewRelicLog Current { get; private set; }
 
     object IEnumerator.Current => Current;
 

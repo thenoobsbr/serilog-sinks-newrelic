@@ -20,7 +20,7 @@ public static class LoggerSinkConfigurationExtensions
         return loggerSinkConfiguration.Sink(sink);
     }
 
-    public class NewRelicSink : PeriodicBatchingSink
+    private class NewRelicSink : PeriodicBatchingSink
     {
         public NewRelicSink(NewRelicOptions options) : base(new NewRelicPeriodBatchSink(options), new PeriodicBatchingSinkOptions())
         {

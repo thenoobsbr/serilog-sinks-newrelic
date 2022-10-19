@@ -3,7 +3,7 @@ using Serilog.Events;
 
 namespace TheNoobs.Serilog.Sinks.NewRelic.Internals;
 
-internal class NewRelicAttributes : Dictionary<string, object?>
+internal sealed class NewRelicAttributes : Dictionary<string, object?>
 {
     public NewRelicAttributes()
     {

@@ -2,7 +2,7 @@
 
 namespace TheNoobs.Serilog.Sinks.NewRelic.Internals;
 
-internal class NewRelicLogCommon
+internal readonly record struct NewRelicLogCommon()
 {
     [JsonPropertyName("attributes")]
     public NewRelicAttributes Attributes { get; } = new();

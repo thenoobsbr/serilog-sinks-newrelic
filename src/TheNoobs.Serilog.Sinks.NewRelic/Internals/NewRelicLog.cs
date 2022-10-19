@@ -3,7 +3,7 @@ using Serilog.Events;
 
 namespace TheNoobs.Serilog.Sinks.NewRelic.Internals;
 
-internal class NewRelicLog
+internal readonly record struct NewRelicLog
 {
     private readonly LogEvent _event;
 

@@ -8,7 +8,7 @@ using TheNoobs.Serilog.Sinks.NewRelic.Extensions;
 namespace TheNoobs.Serilog.Sinks.NewRelic.Internals;
 
 [JsonConverter(typeof(Converter))]
-internal class NewRelicValue
+internal readonly record struct NewRelicValue
 {
     public NewRelicValue(object? value)
     {
@@ -68,7 +68,7 @@ internal class NewRelicValue
     
     class Converter : JsonConverter<NewRelicValue>
     {
-        public override NewRelicValue? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        public override NewRelicValue Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
             var value = JsonSerializer.Deserialize<object?>(ref reader);
             return new NewRelicValue(value);
