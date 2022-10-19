@@ -14,10 +14,10 @@ internal class NewRelicLog
 
     [JsonPropertyName("timestamp")]
     public UnixTimestamp Timestamp => UnixTimestamp.Create(_event.Timestamp);
-
+    
     [JsonPropertyName("attributes")]
     public NewRelicAttributes Attributes => new(_event);
 
     [JsonPropertyName("message")]
-    public string Message => _event.MessageTemplate.Render(_event.Properties);
+    public string Message => _event.RenderMessage();
 }

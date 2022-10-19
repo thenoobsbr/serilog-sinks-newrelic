@@ -6,7 +6,4 @@ internal class NewRelicLogCommon
 {
     [JsonPropertyName("attributes")]
     public NewRelicAttributes Attributes { get; } = new();
-
-    [JsonPropertyName("timestamp")]
-    public UnixTimestamp Timestamp { get; } = new();
 }

@@ -10,6 +10,10 @@ namespace TheNoobs.Serilog.Sinks.NewRelic;
 
 public class NewRelicPeriodBatchSink : IBatchedLogEventSink
 {
+    private static readonly JsonSerializerOptions _serializerOptions = new()
+    {
+        WriteIndented = true
+    };
     private readonly HttpClient _client;
     private readonly NewRelicOptions _options;
 
@@ -35,7 +39,7 @@ public class NewRelicPeriodBatchSink : IBatchedLogEventSink
         var newRelicBatch = new NewRelicLogBatch(logEvents);
         newRelicBatch.Common.Attributes.ApplicationName = _options.ApplicationName;
 
-        var json = JsonSerializer.Serialize(new[] { newRelicBatch });
+        var json = JsonSerializer.Serialize(new[] { newRelicBatch }, _serializerOptions);
         
         using var request = new HttpRequestMessage(HttpMethod.Post, _options.BaseUrl);
         request.Headers.Add("Api-Key", _options.LicenseKey);

@@ -4,14 +4,15 @@ using System.Text.Json.Serialization;
 namespace TheNoobs.Serilog.Sinks.NewRelic.Internals;
 
 [JsonConverter(typeof(Converter))]
-internal readonly record struct UnixTimestamp(long Value)
+public readonly record struct UnixTimestamp(long Value)
 {
-    private static readonly DateTime _epoch = new(1970, 1, 1, 0, 0, 0, DateTimeKind.Unspecified); 
+    private static readonly DateTimeOffset _epoch = new(1970, 1, 1, 0, 0, 0, 0, TimeSpan.Zero);
 
-    public UnixTimestamp() : this((long) DateTime.UtcNow.Subtract(_epoch).TotalMilliseconds)
+    public static UnixTimestamp Create()
     {
+        return Create(DateTimeOffset.UtcNow);
     }
-
+    
     public static UnixTimestamp Create(DateTimeOffset date)
     {
         return new UnixTimestamp((long) date.Subtract(_epoch).TotalMilliseconds);
